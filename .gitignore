@@ -11,6 +11,8 @@
 /*.pidb
 /*.booproj
 
+IntegrationTestsFramework/
+Examples/
 Nature/
 CloudSystem/
 Fonts/
