@@ -1,15 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IGameStateManagerController : MonoBehaviour {
+namespace DreamWalker{
+public interface IGameStateManagerController {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+		void GameStateManagerInit();
+		string SwitchState(IState iState);
+		string FormatState();
+}
 }

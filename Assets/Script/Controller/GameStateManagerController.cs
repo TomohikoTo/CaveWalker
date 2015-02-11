@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System;
 
-public class GameStateManagerController : MonoBehaviour {
+namespace DreamWalker {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	[Serializable]
+	public class GameStateManagerController  {
+		
+		public	string statename;
+		public IGameStateManagerController igsmcon;
+		//ゲームの状態を保持
+		public GameStateManager gsm;
+		public GameStateManagerController() {
+			gsm = new GameStateManager();
+			
+		}
+		public void SetGameStateManagerController(IGameStateManagerController igsmcon){
+			this.igsmcon = igsmcon;
+		}
+		public string GetStateName(){
+			string statename = gsm.activeState.ToString() ;
+			return statename;
+		}
+		
 	}
 }
