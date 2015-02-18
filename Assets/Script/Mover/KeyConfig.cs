@@ -21,6 +21,14 @@ public class KeyConfig : MonoBehaviour {
 		}
 		// キーコンフィグ設定
 		void Start() {
+			KeyConfig.Config["1"] = KeyCode.A;
+			KeyConfig.Config["2"] = KeyCode.W;
+			KeyConfig.Config["3"] = KeyCode.S;
+			KeyConfig.Config["4"] = KeyCode.E;
+			KeyConfig.Config["5"] = KeyCode.D;
+			KeyConfig.Config["6"] = KeyCode.R;
+			KeyConfig.Config["7"] = KeyCode.F;
+
 			KeyConfig.Config["Left"] = KeyCode.LeftArrow;
 			KeyConfig.Config["Right"] = KeyCode.RightArrow;
 			KeyConfig.Config["Shoot"] = KeyCode.Z;
