@@ -28,34 +28,64 @@ public class KeyConfig : MonoBehaviour {
 			KeyConfig.Config["5"] = KeyCode.D;
 			KeyConfig.Config["6"] = KeyCode.R;
 			KeyConfig.Config["7"] = KeyCode.F;
-
-			KeyConfig.Config["Left"] = KeyCode.LeftArrow;
-			KeyConfig.Config["Right"] = KeyCode.RightArrow;
-			KeyConfig.Config["Shoot"] = KeyCode.Z;
 		}
 		
 		// キーコンフィグ使用例
 		void Update() {
+			Debug.Log (KeyConfig.Config["1"] );
 			// 自機の移動
-			if ( KeyConfig.GetKeyDown("Left") ) {
+			if ( KeyConfig.GetKeyDown("1") ) {
 				Debug.Log("Move Left");
 			}
-			if ( KeyConfig.GetKeyDown("Right") ) {
-				Debug.Log("Move Right");
-			}
+
+		}
+
+		void DefaultSetting(){
+			KeyConfig.Config["1"] = KeyCode.A;
+			KeyConfig.Config["2"] = KeyCode.W;
+			KeyConfig.Config["3"] = KeyCode.S;
+			KeyConfig.Config["4"] = KeyCode.E;
+			KeyConfig.Config["5"] = KeyCode.D;
+			KeyConfig.Config["6"] = KeyCode.R;
+			KeyConfig.Config["7"] = KeyCode.F;
 			
-			// 自機の停止
-			if ( KeyConfig.GetKeyUp("Left") ) {
-				Debug.Log("Stop Left");
-			}
-			if ( KeyConfig.GetKeyUp("Right") ) {
-				Debug.Log("Stop Right");
-			}
-			
-			// ショットの発射
-			if ( KeyConfig.GetKey("Shoot") ) {
-				Debug.Log("Shooting!");
+			KeyConfig.Config["Shoot"] = KeyCode.LeftArrow;
+			KeyConfig.Config["Reloard"] = KeyCode.UpArrow;
+			KeyConfig.Config["Guard"] = KeyCode.RightArrow;
+			KeyConfig.Config["Charge"] = KeyCode.DownArrow;
+			KeyConfig.Config["Pause"] = KeyCode.Return;
+
+		}
+
+		void CancelSetting(){
+		}
+		void SaveSetting(){
+		}
+
+		void CheckKey(){
+
+			while(!Input.anyKeyDown){
+			//	foreach(KeyCode code in ){
+			//		if(Input.GetKeyDown (code)){
+			//		}
+
+			//	}
 			}
 		}
+		IEnumerator CheckAllKeyDown ()
+		{
+			while (true) {
+				while (!Input.anyKeyDown) yield return new WaitForSeconds (0.01F);
+				
+			//	foreach (KeyCode code in Enum.GetValues(typeof(KeyCode))) {
+			//		if (Input.GetKeyDown (code)) { keyDown (code); break; }
+			//	}
+				
+				yield return new WaitForSeconds (0.01F);
+			}
+		}
+
+
+
 }
 }
