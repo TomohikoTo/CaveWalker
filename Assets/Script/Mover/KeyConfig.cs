@@ -5,6 +5,7 @@ using System.Collections.Generic;
 namespace DreamWalker {
 public class KeyConfig : MonoBehaviour {
 
+
 		// キーコンフィグの設定情報
 		public static Dictionary<string, KeyCode> Config
 			= new Dictionary<string, KeyCode>();
@@ -64,6 +65,12 @@ public class KeyConfig : MonoBehaviour {
 
 		void CheckKey(){
 
+			//キー入力取得用イベント
+
+			Event keySet = Event.current;
+			if(keySet.isKey){
+				Debug.Log("Detected key code: " + keySet.keyCode);
+			}
 			while(!Input.anyKeyDown){
 			//	foreach(KeyCode code in ){
 			//		if(Input.GetKeyDown (code)){
