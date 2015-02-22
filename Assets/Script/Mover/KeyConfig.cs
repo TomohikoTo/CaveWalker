@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace DreamWalker {
 public class KeyConfig : MonoBehaviour {
 
-
+		Event keySet = Event.current;
 		// キーコンフィグの設定情報
 		public static Dictionary<string, KeyCode> Config
 			= new Dictionary<string, KeyCode>();
@@ -33,11 +33,7 @@ public class KeyConfig : MonoBehaviour {
 		
 		// キーコンフィグ使用例
 		void Update() {
-			Debug.Log (KeyConfig.Config["1"] );
-			// 自機の移動
-			if ( KeyConfig.GetKeyDown("1") ) {
-				Debug.Log("Move Left");
-			}
+			CheckKey();
 
 		}
 
@@ -67,9 +63,15 @@ public class KeyConfig : MonoBehaviour {
 
 			//キー入力取得用イベント
 
-			Event keySet = Event.current;
+
 			if(keySet.isKey){
-				Debug.Log("Detected key code: " + keySet.keyCode);
+				//キーが重複してないか確認
+				if( keySet.keyCode == KeyConfig.Config["1"]){
+
+					Debug.Log("入力キーが重複してます " );
+				
+				}
+				Debug.Log("入力キー" );
 			}
 			while(!Input.anyKeyDown){
 			//	foreach(KeyCode code in ){
