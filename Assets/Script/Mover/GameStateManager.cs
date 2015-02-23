@@ -51,9 +51,13 @@ namespace DreamWalker {
 		public void GameStateManagerInit()
 		{
 			activeState = new TitleState(this);
+
 			
 		}
-		
+
+		public string GetState(){
+			return this.activeState.ToString ();
+		}
 		public string FormatState(){
 			return gsmcon.GetStateName ();
 		}

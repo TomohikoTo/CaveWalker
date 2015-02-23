@@ -18,7 +18,7 @@ namespace DreamWalker {
 			this.igsmcon = igsmcon;
 		}
 		public string GetStateName(){
-			string statename = gsm.activeState.ToString() ;
+			statename = gsm.activeState.ToString() ;
 			return statename;
 		}
 		
