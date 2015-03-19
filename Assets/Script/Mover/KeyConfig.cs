@@ -9,7 +9,8 @@ public class KeyConfig : MonoBehaviour {
 		// キーコンフィグの設定情報
 		public static Dictionary<string, KeyCode> Config
 			= new Dictionary<string, KeyCode>();
-		
+
+
 		// キー状態取得メソッド
 		public static bool GetKey(string key) {
 			return Input.GetKey(Config[key]);
@@ -22,6 +23,7 @@ public class KeyConfig : MonoBehaviour {
 		}
 		// キーコンフィグ設定
 		void Start() {
+
 			KeyConfig.Config["1"] = KeyCode.A;
 			KeyConfig.Config["2"] = KeyCode.W;
 			KeyConfig.Config["3"] = KeyCode.S;
@@ -62,37 +64,17 @@ public class KeyConfig : MonoBehaviour {
 		void CheckKey(){
 
 			//キー入力取得用イベント
-
-
-			if(keySet.isKey){
+			foreach(KeyCode kName in KeyConfig.Config)  
 				//キーが重複してないか確認
-				if( keySet.keyCode == KeyConfig.Config["1"]){
+				if( (Input.GetKeyDown(KeyConfig.Config["1"]))){
 
 					Debug.Log("入力キーが重複してます " );
 				
 				}
-				Debug.Log("入力キー" );
-			}
-			while(!Input.anyKeyDown){
-			//	foreach(KeyCode code in ){
-			//		if(Input.GetKeyDown (code)){
-			//		}
+				
+			
+		}
 
-			//	}
-			}
-		}
-		IEnumerator CheckAllKeyDown ()
-		{
-			while (true) {
-				while (!Input.anyKeyDown) yield return new WaitForSeconds (0.01F);
-				
-			//	foreach (KeyCode code in Enum.GetValues(typeof(KeyCode))) {
-			//		if (Input.GetKeyDown (code)) { keyDown (code); break; }
-			//	}
-				
-				yield return new WaitForSeconds (0.01F);
-			}
-		}
 
 
 
