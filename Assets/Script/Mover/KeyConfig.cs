@@ -23,7 +23,7 @@ public class KeyConfig : MonoBehaviour {
 		}
 		// キーコンフィグ設定
 		void Start() {
-			myNumbers[0] = KeyCode.A;
+		
 			KeyConfig.Config[0] = KeyCode.A;
 			KeyConfig.Config[1] = KeyCode.W;
 			KeyConfig.Config[2] = KeyCode.S;
@@ -40,19 +40,19 @@ public class KeyConfig : MonoBehaviour {
 		}
 
 		void DefaultSetting(){
-			KeyConfig.Config["1"] = KeyCode.A;
-			KeyConfig.Config["2"] = KeyCode.W;
-			KeyConfig.Config["3"] = KeyCode.S;
-			KeyConfig.Config["4"] = KeyCode.E;
-			KeyConfig.Config["5"] = KeyCode.D;
-			KeyConfig.Config["6"] = KeyCode.R;
-			KeyConfig.Config["7"] = KeyCode.F;
+			KeyConfig.Config[0] = KeyCode.A;
+			KeyConfig.Config[1] = KeyCode.W;
+			KeyConfig.Config[2] = KeyCode.S;
+			KeyConfig.Config[3] = KeyCode.E;
+			KeyConfig.Config[4] = KeyCode.D;
+			KeyConfig.Config[5] = KeyCode.R;
+			KeyConfig.Config[6] = KeyCode.F;
 			
-			KeyConfig.Config["Shoot"] = KeyCode.LeftArrow;
-			KeyConfig.Config["Reloard"] = KeyCode.UpArrow;
-			KeyConfig.Config["Guard"] = KeyCode.RightArrow;
-			KeyConfig.Config["Charge"] = KeyCode.DownArrow;
-			KeyConfig.Config["Pause"] = KeyCode.Return;
+			KeyConfig.Config[7] = KeyCode.LeftArrow;
+			KeyConfig.Config[8] = KeyCode.UpArrow;
+			KeyConfig.Config[9] = KeyCode.RightArrow;
+			KeyConfig.Config[10] = KeyCode.DownArrow;
+			KeyConfig.Config[11] = KeyCode.Return;
 
 		}
 
