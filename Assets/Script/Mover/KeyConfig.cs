@@ -61,17 +61,19 @@ public class KeyConfig : MonoBehaviour {
 		void SaveSetting(){
 		}
 
-		void CheckKey(){
+		bool CheckKey(){
 			int i ;
 			//キー入力取得用イベント
 			for( i = 0 ; i < Config.Count ; i++){
 				if( Input.GetKeyDown(KeyConfig.Config[i]) ){
+
 					Debug.Log("入力キーが重複してます " );
+					return false;
 				}
 
 			}
 
-				
+			return true;	
 			
 		}
 
