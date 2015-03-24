@@ -24,7 +24,7 @@ namespace DreamWalker {
 		
 		public void Render() {
 			//描画等
-			
+
 		}
 		
 	}

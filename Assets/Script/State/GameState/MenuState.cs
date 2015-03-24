@@ -61,7 +61,7 @@ namespace DreamWalker {
 			else if(MenuObj.name == "OPTION")
 			{
 				//Option画面の加算読み込み
-				Application.LoadLevelAdditive("Option");
+				Application.LoadLevel("Option");
 				manager.SwitchState(new OptionState(manager));
 				Debug.Log("OPTION");
 			}
